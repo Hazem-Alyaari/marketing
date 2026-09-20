@@ -13,6 +13,7 @@ import {
 } from "@/lib/product-media";
 import type { Article, ArticleImage } from "@/types/blog";
 import type { Locale } from "@/i18n/routing";
+import { withBasePath } from "@/lib/utils";
 
 function isProductScreenshotKey(
   value: ArticleImage["src"],
@@ -24,7 +25,7 @@ export function resolveArticleImageSrc(image: ArticleImage): string {
   if (isProductScreenshotKey(image.src)) {
     return productScreenshots[image.src].src;
   }
-  return image.src;
+  return withBasePath(image.src);
 }
 
 export function resolveArticleImageDimensions(image: ArticleImage): {

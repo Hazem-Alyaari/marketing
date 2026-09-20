@@ -1,3 +1,5 @@
+import { withBasePath } from "@/lib/utils";
+
 /**
  * Product screenshot media config for marketing.
  * Mark `available: true` only when the file exists under public/images/screenshots/.
@@ -20,9 +22,13 @@ const hdSlot = {
   recommendedHeight: 950,
 } as const;
 
+function shot(path: `/images/screenshots/${string}`) {
+  return withBasePath(path);
+}
+
 export const productScreenshots = {
   dashboard: {
-    src: "/images/screenshots/dashboard.png",
+    src: shot("/images/screenshots/dashboard.png"),
     available: true,
     width: 1024,
     height: 506,
@@ -30,7 +36,7 @@ export const productScreenshots = {
     ...hdSlot,
   },
   students: {
-    src: "/images/screenshots/students.png",
+    src: shot("/images/screenshots/students.png"),
     available: true,
     width: 1911,
     height: 948,
@@ -38,7 +44,7 @@ export const productScreenshots = {
     ...hdSlot,
   },
   academics: {
-    src: "/images/screenshots/schedule.png",
+    src: shot("/images/screenshots/schedule.png"),
     available: true,
     width: 1911,
     height: 948,
@@ -46,7 +52,7 @@ export const productScreenshots = {
     ...hdSlot,
   },
   attendance: {
-    src: "/images/screenshots/grades.png",
+    src: shot("/images/screenshots/grades.png"),
     available: true,
     width: 1911,
     height: 949,
@@ -54,7 +60,7 @@ export const productScreenshots = {
     ...hdSlot,
   },
   finance: {
-    src: "/images/screenshots/accounting.png",
+    src: shot("/images/screenshots/accounting.png"),
     available: true,
     width: 1911,
     height: 949,
@@ -62,7 +68,7 @@ export const productScreenshots = {
     ...hdSlot,
   },
   hr: {
-    src: "/images/screenshots/employees.png",
+    src: shot("/images/screenshots/employees.png"),
     available: true,
     width: 1911,
     height: 957,
@@ -70,7 +76,7 @@ export const productScreenshots = {
     ...hdSlot,
   },
   supervision: {
-    src: "/images/screenshots/supervision.png",
+    src: shot("/images/screenshots/supervision.png"),
     available: true,
     width: 1911,
     height: 957,
@@ -78,7 +84,7 @@ export const productScreenshots = {
     ...hdSlot,
   },
   operations: {
-    src: "/images/screenshots/behavior.png",
+    src: shot("/images/screenshots/behavior.png"),
     available: true,
     width: 1911,
     height: 957,
@@ -86,7 +92,7 @@ export const productScreenshots = {
     ...hdSlot,
   },
   permissions: {
-    src: "/images/screenshots/permissions.png",
+    src: shot("/images/screenshots/permissions.png"),
     available: true,
     width: 1911,
     height: 957,
@@ -94,7 +100,7 @@ export const productScreenshots = {
     ...hdSlot,
   },
   studentPortal: {
-    src: "/images/screenshots/student-portal.png",
+    src: shot("/images/screenshots/student-portal.png"),
     available: true,
     width: 1899,
     height: 952,
@@ -102,7 +108,7 @@ export const productScreenshots = {
     ...hdSlot,
   },
   guardianPortal: {
-    src: "/images/screenshots/guardian-portal.png",
+    src: shot("/images/screenshots/guardian-portal.png"),
     available: true,
     width: 1899,
     height: 952,
