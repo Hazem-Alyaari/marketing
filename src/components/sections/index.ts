@@ -1,0 +1,13 @@
+export { HeroSection } from "./hero-section";
+export { ValueSection } from "./value-section";
+export { ModulesSection } from "./modules-section";
+export { ConnectedWorkflowSection } from "./connected-workflow-section";
+export { UsersSection } from "./users-section";
+export { DemoExplainerSection } from "./demo-explainer-section";
+export { FinalCtaSection } from "./final-cta-section";
+export { SolutionsSection } from "./solutions-section";
+export { ProductShowcaseSection } from "./product-showcase-section";
+export { SecuritySection } from "./security-section";
+export { ReportsSection } from "./reports-section";
+export { MobileSection } from "./mobile-section";
+export { FaqSection } from "./faq-section";
