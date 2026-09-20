@@ -75,7 +75,8 @@ function ContactFormInner() {
     setFieldErrors({});
 
     try {
-      const response = await fetch("/api/contact", {
+      const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+      const response = await fetch(`${basePath}/api/contact`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(values),

@@ -3,6 +3,8 @@ import { buildLocalePath, getSiteUrl } from "@/config/seo";
 import { routing } from "@/i18n/routing";
 import { articlePath, getAllPublishedSitemapArticles } from "@/lib/blog";
 
+export const dynamic = "force-static";
+
 const staticPaths = [
   "",
   "/features",

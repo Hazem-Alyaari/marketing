@@ -1,4 +1,6 @@
-import { getTranslations } from "next-intl/server";
+"use client";
+
+import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { blogCategories } from "@/data/blog/categories";
 import { blogHref } from "@/lib/blog-href";
@@ -12,11 +14,11 @@ type BlogCategoriesNavProps = {
   available: readonly BlogCategoryId[];
 };
 
-export async function BlogCategoriesNav({
+export function BlogCategoriesNav({
   active,
   available,
 }: BlogCategoriesNavProps) {
-  const t = await getTranslations("Blog");
+  const t = useTranslations("Blog");
   const visible = blogCategories.filter((category) =>
     available.includes(category.id),
   );
