@@ -54,6 +54,19 @@ export function getArticleBySlug(
   return article;
 }
 
+/** Find a published article by slug in any locale (for cross-locale redirects). */
+export function getArticleBySlugAnyLocale(slug: string): Article | undefined {
+  return allArticles.find((item) => {
+    if (item.slug !== slug) {
+      return false;
+    }
+    if (item.draft && !allowDraftsInDev()) {
+      return false;
+    }
+    return true;
+  });
+}
+
 export function getArticleById(id: string): Article | undefined {
   return allArticles.find((article) => article.id === id);
 }
@@ -176,6 +189,43 @@ export function getAllPublishedSitemapArticles(): Article[] {
 
 export function articlePath(slug: string): string {
   return `/blog/${slug}`;
+}
+
+/**
+ * Map the current pathname to the equivalent path in another locale.
+ * Blog posts use different slugs per language — keep the same article via translationId.
+ */
+export function resolveLocaleSwitchPath(
+  pathname: string,
+  fromLocale: Locale,
+  toLocale: Locale,
+): string {
+  if (fromLocale === toLocale) {
+    return pathname;
+  }
+
+  const normalized = pathname.replace(/\/+$/, "") || "/";
+  const blogMatch = normalized.match(/^\/blog\/([^/]+)$/);
+  if (!blogMatch) {
+    return pathname;
+  }
+
+  const slug = blogMatch[1];
+  if (!slug) {
+    return pathname;
+  }
+
+  const article = getArticleBySlug(fromLocale, slug);
+  if (!article) {
+    return "/blog";
+  }
+
+  const counterpart = getLocaleCounterpart(article);
+  if (!counterpart || counterpart.locale !== toLocale) {
+    return "/blog";
+  }
+
+  return articlePath(counterpart.slug);
 }
 
 export function formatArticleDate(iso: string, locale: Locale): string {

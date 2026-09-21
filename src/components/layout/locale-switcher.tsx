@@ -4,6 +4,7 @@ import { useId } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { usePathname, useRouter } from "@/i18n/navigation";
 import { routing, type Locale } from "@/i18n/routing";
+import { resolveLocaleSwitchPath } from "@/lib/blog";
 import { cn } from "@/lib/utils";
 
 type LocaleSwitcherProps = {
@@ -36,7 +37,14 @@ export function LocaleSwitcher({
         value={locale}
         onChange={(event) => {
           const nextLocale = event.target.value as Locale;
-          router.replace(pathname, { locale: nextLocale });
+          const nextPath = resolveLocaleSwitchPath(
+            pathname,
+            locale,
+            nextLocale,
+          );
+          const search =
+            typeof window !== "undefined" ? window.location.search : "";
+          router.replace(`${nextPath}${search}`, { locale: nextLocale });
         }}
         aria-label={t("label")}
       >

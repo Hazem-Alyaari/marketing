@@ -11,7 +11,7 @@ import { BreadcrumbJsonLd } from "@/components/seo/breadcrumb-json-ld";
 import { ArticleJsonLd } from "@/components/seo/article-json-ld";
 import { Container } from "@/components/ui/container";
 import { Reveal } from "@/components/ui/reveal";
-import { Link } from "@/i18n/navigation";
+import { Link, redirect } from "@/i18n/navigation";
 import { getBlogCategory } from "@/data/blog/categories";
 import { buildLocalePath } from "@/config/seo";
 import { routes } from "@/config/navigation";
@@ -22,8 +22,8 @@ import {
   extractToc,
   formatArticleDate,
   getArticleBySlug,
+  getArticleBySlugAnyLocale,
   getLocaleCounterpart,
-  getPublishedArticles,
   getRelatedArticles,
   toArticleCard,
 } from "@/lib/blog";
@@ -34,25 +34,70 @@ import {
   resolveArticleImageSrc,
 } from "@/lib/blog-metadata";
 import type { Locale } from "@/i18n/routing";
-import { routing } from "@/i18n/routing";
+import { allArticles } from "@/content/blog";
 
 type PageProps = {
   params: Promise<{ locale: string; slug: string }>;
 };
 
+/**
+ * Canonical locale+slug pairs, plus cross-locale slug aliases so a language
+ * switch that keeps the wrong slug can still redirect on static hosts.
+ */
 export function generateStaticParams() {
   const params: { locale: string; slug: string }[] = [];
-  for (const locale of routing.locales) {
-    for (const article of getPublishedArticles(locale)) {
-      params.push({ locale, slug: article.slug });
+  const seen = new Set<string>();
+
+  const push = (locale: string, slug: string) => {
+    const key = `${locale}:${slug}`;
+    if (seen.has(key)) {
+      return;
+    }
+    seen.add(key);
+    params.push({ locale, slug });
+  };
+
+  for (const article of allArticles) {
+    if (article.draft) {
+      continue;
+    }
+    push(article.locale, article.slug);
+    const counterpart = getLocaleCounterpart(article);
+    if (counterpart) {
+      push(counterpart.locale, article.slug);
     }
   }
+
   return params;
+}
+
+function resolveBlogArticle(locale: Locale, slug: string) {
+  const article = getArticleBySlug(locale, slug);
+  if (article) {
+    return { article, redirectTo: null as string | null };
+  }
+
+  const source = getArticleBySlugAnyLocale(slug);
+  if (!source) {
+    return { article: null, redirectTo: null as string | null };
+  }
+
+  const counterpart = getLocaleCounterpart(source);
+  if (counterpart && counterpart.locale === locale) {
+    return { article: null, redirectTo: articlePath(counterpart.slug) };
+  }
+
+  return { article: null, redirectTo: null as string | null };
 }
 
 export async function generateMetadata({ params }: PageProps) {
   const { locale, slug } = await params;
-  const article = getArticleBySlug(locale as Locale, slug);
+  const typedLocale = locale as Locale;
+  const { article, redirectTo } = resolveBlogArticle(typedLocale, slug);
+
+  if (redirectTo) {
+    return {};
+  }
   if (!article) {
     return {};
   }
@@ -65,7 +110,11 @@ export default async function BlogPostPage({ params }: PageProps) {
   setRequestLocale(locale);
 
   const typedLocale = locale as Locale;
-  const article = getArticleBySlug(typedLocale, slug);
+  const { article, redirectTo } = resolveBlogArticle(typedLocale, slug);
+
+  if (redirectTo) {
+    redirect({ href: redirectTo, locale: typedLocale });
+  }
   if (!article) {
     notFound();
   }
