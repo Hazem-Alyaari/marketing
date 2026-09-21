@@ -49,7 +49,8 @@ const defaultDescription =
  * URL roles (keep distinct — do not conflate):
  * - siteUrl: marketing website
  * - appUrl: normal MySchool application / login (when applicable)
- * - demoUrl: public demo environment (free exploration; not a subscription claim)
+ * - demoUrl: public demo environment (free exploration; not a subscription claim).
+ *   User-facing CTAs open the marketing `/demo` launch page, which then enters demoUrl.
  *
  * TODO(security): production marketing should eventually use a proper HTTPS demo
  * domain (conceptually https://demo.<production-domain>). Do not invent or

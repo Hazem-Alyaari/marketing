@@ -169,6 +169,15 @@
     "cta": "Try MySchool Free",
     "hint": "Explore the public demo directly."
   },
+  "DemoPage": {
+    "meta": {
+      "title": "Try MySchool",
+      "description": "Open the public MySchool demo and explore the system directly from this website."
+    },
+    "title": "Opening the public demo…",
+    "description": "You will be taken to the public exploration environment in a moment.",
+    "continue": "Continue to the demo"
+  },
   "Common": {
     "skipToContent": "Skip to content"
   },

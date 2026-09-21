@@ -14,6 +14,8 @@ export const routes = {
   blog: "/blog",
   faq: "/faq",
   contact: "/contact",
+  /** Branded marketing entry that opens the public demo (hides the raw demo host). */
+  demo: "/demo",
 } as const;
 
 export type AppRoute = (typeof routes)[keyof typeof routes];
@@ -129,8 +131,8 @@ export const footerNavigationGroups = [
 /**
  * Header / mobile action links.
  * - login → siteConfig.appUrl (normal product entry; empty when unset)
- * - tryDemo → siteConfig.demoUrl (public demo; empty when unset — never invent)
- * Both are external origins; do not route through next-intl locale prefixes.
+ * - tryDemo → internal `/demo` launch page (only when NEXT_PUBLIC_DEMO_URL is set)
+ * login stays an external origin; tryDemo is locale-routed via next-intl.
  */
 export const actionNavigation = {
   login: {
@@ -141,10 +143,10 @@ export const actionNavigation = {
   },
   tryDemo: {
     id: "tryDemo",
-    href: siteConfig.demoUrl,
+    href: routes.demo,
     labelKey: "tryDemo",
     shortLabelKey: "tryDemoShort",
-    external: true,
+    external: false,
   },
 } as const satisfies Record<string, NavCta>;
 

@@ -37,7 +37,8 @@ jobs:
           GITHUB_PAGES: "true"
           NEXT_PUBLIC_SITE_URL: https://Hazem-Alyaari.github.io/marketing
           NEXT_PUBLIC_APP_URL: ${{ vars.NEXT_PUBLIC_APP_URL }}
-          NEXT_PUBLIC_DEMO_URL: ${{ vars.NEXT_PUBLIC_DEMO_URL }}
+          # Prefer repo variable when set; otherwise use the current public demo entry.
+          NEXT_PUBLIC_DEMO_URL: ${{ vars.NEXT_PUBLIC_DEMO_URL || 'http://89.116.38.192:8082/login' }}
           NEXT_PUBLIC_CONTACT_EMAIL: ${{ vars.NEXT_PUBLIC_CONTACT_EMAIL }}
           NEXT_PUBLIC_CONTACT_PHONE: ${{ vars.NEXT_PUBLIC_CONTACT_PHONE }}
           NEXT_PUBLIC_WHATSAPP_URL: ${{ vars.NEXT_PUBLIC_WHATSAPP_URL }}

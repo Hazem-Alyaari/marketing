@@ -9,10 +9,10 @@ Instead of managing students, teachers, attendance, grades, fees, employees, sup
 ### Explore MySchool
 
 - **Website:** https://hazem-alyaari.github.io/marketing
-- **Try the public demo:** http://89.116.38.192:8082/login
+- **Try the public demo:** https://hazem-alyaari.github.io/marketing/ar/demo/
 - **Main product repository:** https://github.com/Hazem-Alyaari/MySchool
 
-> The public demo is available for exploring MySchool before adopting it in a school.
+> Open the demo from the website (`/demo`). The public demo is available for exploring MySchool before adopting it in a school.
 
 ---
 

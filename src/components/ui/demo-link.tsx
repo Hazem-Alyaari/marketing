@@ -1,18 +1,20 @@
-import type { AnchorHTMLAttributes, ReactNode } from "react";
+import type { ComponentProps, ReactNode } from "react";
 import { ExternalLink } from "lucide-react";
 import { siteConfig } from "@/config/site";
+import { routes } from "@/config/navigation";
+import { Link } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
 import { buttonClassName, type ButtonSize, type ButtonVariant } from "@/components/ui/button";
 
 /**
  * Centralized public-demo CTA.
- * - Uses siteConfig.demoUrl only (never invents a URL)
- * - Renders nothing when demoUrl is empty (no broken href)
- * - Opens externally in a new tab; ready for a future analytics hook via data-cta
+ * - Shown only when siteConfig.demoUrl is set (never invents a URL)
+ * - Links to the branded marketing `/demo` launch page (not the raw demo host)
+ * - Ready for a future analytics hook via data-cta
  */
 export type DemoLinkProps = Omit<
-  AnchorHTMLAttributes<HTMLAnchorElement>,
-  "href" | "target" | "rel"
+  ComponentProps<typeof Link>,
+  "href" | "locale"
 > & {
   children: ReactNode;
   /** Visual style shared with Button. Omit for unstyled / custom className-only. */
@@ -27,6 +29,7 @@ export function hasDemoUrl(): boolean {
   return Boolean(siteConfig.demoUrl.trim());
 }
 
+/** Real demo environment URL (external). Prefer DemoLink / `/demo` for user-facing CTAs. */
 export function getDemoUrl(): string {
   return siteConfig.demoUrl.trim();
 }
@@ -41,16 +44,13 @@ export function DemoLink({
   onClick,
   ...props
 }: DemoLinkProps) {
-  const href = getDemoUrl();
-  if (!href) {
+  if (!hasDemoUrl()) {
     return null;
   }
 
   return (
-    <a
-      href={href}
-      target="_blank"
-      rel="noopener noreferrer"
+    <Link
+      href={routes.demo}
       data-cta={ctaId}
       data-cta-destination="demo"
       className={
@@ -63,6 +63,6 @@ export function DemoLink({
     >
       {children}
       {showIcon ? <ExternalLink className="size-4 shrink-0 opacity-80" aria-hidden /> : null}
-    </a>
+    </Link>
   );
 }
