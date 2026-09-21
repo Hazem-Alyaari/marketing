@@ -737,8 +737,9 @@
       "cta": "Try MySchool Free"
     },
     "form": {
+      "eyebrow": "Direct message",
       "title": "Send a message",
-      "description": "Tell us how we can help — including starting the free first year. This form is for inquiries, not a gate to the public demo.",
+      "description": "Fill out the form below and we will get back to you as soon as possible — including help starting the free first year.",
       "fullName": "Full name",
       "organization": "School / organization",
       "country": "Country",
@@ -748,6 +749,7 @@
       "studentCount": "Approximate student count (optional)",
       "message": "Message (optional)",
       "contactHint": "Provide at least an email or a phone number.",
+      "requiredNote": "All fields marked with * are required",
       "submit": "Send message",
       "submitting": "Sending…",
       "success": "Your message was sent. We will get back to you soon.",
@@ -755,6 +757,16 @@
       "errorNotConfigured": "Message delivery is not configured yet. Please reach out via the contact details on this page, or try again later.",
       "errorValidation": "Please check the highlighted fields and try again.",
       "honeypotLabel": "Leave this field empty",
+      "placeholders": {
+        "fullName": "Enter your full name",
+        "organization": "School or organization name",
+        "country": "Your country",
+        "inquiryType": "Select an inquiry type",
+        "email": "name@example.com",
+        "phone": "+967 …",
+        "studentCount": "e.g. 500",
+        "message": "Tell us about your school, ask a question, or share what you need…"
+      },
       "inquiryTypes": {
         "general": "General inquiry",
         "firstYear": "Start free first year",

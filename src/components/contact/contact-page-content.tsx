@@ -1,4 +1,5 @@
 import { getTranslations } from "next-intl/server";
+import { Mail, Phone } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { DemoLink, hasDemoUrl } from "@/components/ui/demo-link";
 import { Reveal } from "@/components/ui/reveal";
@@ -69,35 +70,38 @@ export async function ContactPageContent() {
       <section aria-labelledby="contact-form-heading" className="section-pad">
         <Container narrow>
           <Reveal>
-            <div className="mb-8 max-w-xl">
-              <h2
-                id="contact-form-heading"
-                className="text-balance text-2xl font-semibold tracking-tight text-foreground"
-              >
-                {t("form.title")}
-              </h2>
-              <p className="mt-2 text-pretty text-sm leading-relaxed text-muted-foreground sm:text-base">
-                {t("form.description")}
-              </p>
-              {(contactEmail || contactPhone) && (
-                <ul className="mt-4 space-y-1 text-sm text-muted-foreground">
-                  {contactEmail ? (
-                    <li>
-                      <a
-                        href={`mailto:${contactEmail}`}
-                        className="text-primary underline-offset-2 hover:underline"
-                      >
-                        {contactEmail}
-                      </a>
-                    </li>
-                  ) : null}
-                  {contactPhone ? <li dir="ltr">{contactPhone}</li> : null}
-                </ul>
-              )}
-            </div>
-            <div className="relative">
-              <ContactForm />
-            </div>
+            {(contactEmail || contactPhone) && (
+              <ul className="mb-8 flex flex-wrap items-center justify-center gap-3">
+                {contactEmail ? (
+                  <li>
+                    <a
+                      href={`mailto:${contactEmail}`}
+                      className="inline-flex items-center gap-2 rounded-[var(--radius-lg)] border border-border bg-surface px-4 py-2.5 text-sm text-foreground shadow-[var(--shadow-sm)] transition-colors hover:border-primary/30 hover:bg-muted"
+                    >
+                      <Mail className="size-4 text-primary" aria-hidden />
+                      <span>{contactEmail}</span>
+                    </a>
+                  </li>
+                ) : null}
+                {contactPhone ? (
+                  <li>
+                    <a
+                      href={`tel:${contactPhone.replace(/\s+/g, "")}`}
+                      className="inline-flex items-center gap-2 rounded-[var(--radius-lg)] border border-border bg-surface px-4 py-2.5 text-sm text-foreground shadow-[var(--shadow-sm)] transition-colors hover:border-primary/30 hover:bg-muted"
+                      dir="ltr"
+                    >
+                      <Phone className="size-4 text-primary" aria-hidden />
+                      <span>{contactPhone}</span>
+                    </a>
+                  </li>
+                ) : null}
+              </ul>
+            )}
+
+            <h2 id="contact-form-heading" className="sr-only">
+              {t("form.title")}
+            </h2>
+            <ContactForm />
           </Reveal>
         </Container>
       </section>
