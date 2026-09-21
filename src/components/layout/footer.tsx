@@ -1,15 +1,17 @@
-import { getTranslations } from "next-intl/server";
+import { getLocale, getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { footerNavigationGroups } from "@/config/navigation";
-import { siteConfig } from "@/config/site";
+import { getBrandName, siteConfig } from "@/config/site";
 import { Container } from "@/components/ui/container";
 import { SiteWordmark } from "@/components/ui/site-wordmark";
 import { LocaleSwitcher } from "@/components/layout/locale-switcher";
 
 export async function Footer() {
+  const locale = await getLocale();
   const tNav = await getTranslations("Navigation");
   const tFooter = await getTranslations("Footer");
   const year = new Date().getFullYear();
+  const brand = getBrandName(locale);
 
   const contactEmail = siteConfig.contact.email;
   const contactPhone = siteConfig.contact.phone;
@@ -96,7 +98,7 @@ export async function Footer() {
 
         <div className="mt-8 flex flex-col gap-2 border-t border-border pt-5 sm:flex-row sm:items-center sm:justify-between">
           <p className="text-xs text-muted-foreground">
-            © {year} {siteConfig.name}. {tFooter("rights")}
+            © {year} {brand}. {tFooter("rights")}
           </p>
         </div>
       </Container>

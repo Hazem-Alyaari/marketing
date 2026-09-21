@@ -1,5 +1,5 @@
 import { JsonLd } from "@/components/seo/json-ld";
-import { siteConfig } from "@/config/site";
+import { getBrandName } from "@/config/site";
 import { getSiteUrl } from "@/config/seo";
 import { articlePath } from "@/lib/blog";
 import {
@@ -17,6 +17,7 @@ export function ArticleJsonLd({ article }: ArticleJsonLdProps) {
     return null;
   }
 
+  const brand = getBrandName(article.locale);
   const url = `${base}/${article.locale}${articlePath(article.slug)}`;
   const image = article.ogImage ?? article.image;
 
@@ -34,11 +35,11 @@ export function ArticleJsonLd({ article }: ArticleJsonLdProps) {
     },
     author: {
       "@type": "Organization",
-      name: siteConfig.name,
+      name: brand,
     },
     publisher: {
       "@type": "Organization",
-      name: siteConfig.name,
+      name: brand,
     },
     image: image ? `${base}${resolveArticleImageSrc(image)}` : undefined,
   };

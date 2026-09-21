@@ -56,8 +56,14 @@ const defaultDescription =
  * auto-upgrade the current HTTP/IP demo URL until a real HTTPS domain exists.
  */
 export const siteConfig = {
+  /** Canonical English product name (repo, package, technical refs). */
   name: "MySchool",
   shortName: "MySchool",
+  /** Display name shown in the UI per locale. */
+  localizedNames: {
+    ar: "مدرستي",
+    en: "MySchool",
+  } as const satisfies Record<SiteLocale, string>,
   description: defaultDescription,
 
   siteUrl: normalizePublicUrl("NEXT_PUBLIC_SITE_URL"),
@@ -113,3 +119,11 @@ export const siteConfig = {
 } as const;
 
 export type SiteConfig = typeof siteConfig;
+
+/** Brand label for the active locale (Arabic UI uses «مدرستي»). */
+export function getBrandName(locale: string): string {
+  if (locale === "ar") {
+    return siteConfig.localizedNames.ar;
+  }
+  return siteConfig.localizedNames.en;
+}

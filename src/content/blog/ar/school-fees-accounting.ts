@@ -101,7 +101,7 @@ export const arSchoolFeesAccounting: Article = {
       "إغفال العلاقة بين الرواتب والجوانب المحاسبية عند وجودها",
     ),
 
-    h2("myschool-context", "في سياق MySchool"),
+    h2("myschool-context", "في سياق مدرستي"),
     p(
       t("تتضمن المنصة قدرات لتحصيل الرسوم وحسابات الطلاب والمصروفات وجوانب محاسبية تشمل سير عمل مرتبطًا بالرواتب. راجع "),
       internal("/features", "مميزات المالية والمحاسبة", "finance-accounting"),

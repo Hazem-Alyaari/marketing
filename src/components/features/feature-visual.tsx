@@ -3,7 +3,8 @@
 import { useState } from "react";
 import Image from "next/image";
 import { Expand, ImageIcon } from "lucide-react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
+import { getBrandName } from "@/config/site";
 import { cn } from "@/lib/utils";
 import {
   productScreenshots,
@@ -29,6 +30,8 @@ export function FeatureVisual({
   className,
 }: FeatureVisualProps) {
   const t = useTranslations("Features");
+  const locale = useLocale();
+  const brand = getBrandName(locale);
   const shot = productScreenshots[screenshotKey];
   const [failed, setFailed] = useState(false);
 
@@ -58,7 +61,7 @@ export function FeatureVisual({
             aria-hidden
           />
           <span className="ms-2 truncate text-[11px] text-muted-foreground">
-            MySchool
+            {brand}
           </span>
         </div>
 

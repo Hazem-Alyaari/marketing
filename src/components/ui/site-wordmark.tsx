@@ -1,5 +1,6 @@
+import { getLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
-import { siteConfig } from "@/config/site";
+import { getBrandName } from "@/config/site";
 import { cn } from "@/lib/utils";
 
 type SiteWordmarkProps = {
@@ -7,9 +8,14 @@ type SiteWordmarkProps = {
 };
 
 /**
- * Typography-only MySchool wordmark — no invented logo asset.
+ * Typography-only brand wordmark — no invented logo asset.
+ * Arabic locales show «مدرستي»; English shows «MySchool».
  */
-export function SiteWordmark({ className }: SiteWordmarkProps) {
+export async function SiteWordmark({ className }: SiteWordmarkProps) {
+  const locale = await getLocale();
+  const brand = getBrandName(locale);
+  const mark = locale === "ar" ? "م" : "MS";
+
   return (
     <Link
       href="/"
@@ -22,10 +28,10 @@ export function SiteWordmark({ className }: SiteWordmarkProps) {
         aria-hidden
         className="flex size-8 shrink-0 items-center justify-center rounded-[0.55rem] bg-primary text-[0.7rem] font-bold tracking-tight text-primary-foreground shadow-[var(--shadow-sm)] transition-colors group-hover:bg-primary-hover"
       >
-        MS
+        {mark}
       </span>
       <span className="text-[0.95rem] font-semibold tracking-tight text-foreground">
-        {siteConfig.name}
+        {brand}
       </span>
     </Link>
   );
