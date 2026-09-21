@@ -751,10 +751,8 @@
       "contactHint": "Provide at least an email or a phone number.",
       "requiredNote": "All fields marked with * are required",
       "submit": "Send message",
-      "submitting": "Sending…",
-      "success": "Your message was sent. We will get back to you soon.",
-      "errorGeneric": "We could not send your message. Please try again later.",
-      "errorNotConfigured": "Message delivery is not configured yet. Please reach out via the contact details on this page, or try again later.",
+      "submitting": "Opening email…",
+      "success": "Your email app should open with the message ready. Send it to complete your inquiry.",
       "errorValidation": "Please check the highlighted fields and try again.",
       "honeypotLabel": "Leave this field empty",
       "placeholders": {

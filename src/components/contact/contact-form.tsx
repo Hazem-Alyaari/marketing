@@ -17,12 +17,8 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { CONTACT_INQUIRY_TYPES } from "@/lib/contact/types";
-import type {
-  ContactApiResponse,
-  ContactFieldErrors,
-  ContactFormInput,
-} from "@/lib/contact/types";
-import { parseContactInquiryType } from "@/lib/contact/href";
+import type { ContactFieldErrors, ContactFormInput } from "@/lib/contact/types";
+import { buildContactMailto, parseContactInquiryType } from "@/lib/contact/href";
 import { emptyContactForm, validateContactForm } from "@/lib/contact/validation";
 import { cn } from "@/lib/utils";
 
@@ -32,7 +28,7 @@ type FormStatus =
   | { kind: "idle" }
   | { kind: "submitting" }
   | { kind: "success" }
-  | { kind: "error"; messageKey: "errorGeneric" | "errorNotConfigured" | "errorValidation" };
+  | { kind: "error"; messageKey: "errorValidation" };
 
 function FieldError({ message }: { message?: string }) {
   if (!message) {
@@ -98,7 +94,7 @@ function ContactFormInner() {
     setValues((prev) => ({ ...prev, [key]: value }));
   };
 
-  async function onSubmit(event: FormEvent<HTMLFormElement>) {
+  function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setStatus({ kind: "submitting" });
 
@@ -117,35 +113,10 @@ function ContactFormInner() {
 
     setFieldErrors({});
 
-    try {
-      const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
-      const response = await fetch(`${basePath}/api/contact`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(values),
-      });
-
-      const data = (await response.json()) as ContactApiResponse;
-
-      if (!data.ok) {
-        if (data.code === "validation_error" && data.fieldErrors) {
-          setFieldErrors(data.fieldErrors);
-          setStatus({ kind: "error", messageKey: "errorValidation" });
-          return;
-        }
-        if (data.code === "not_configured") {
-          setStatus({ kind: "error", messageKey: "errorNotConfigured" });
-          return;
-        }
-        setStatus({ kind: "error", messageKey: "errorGeneric" });
-        return;
-      }
-
-      setValues(emptyContactForm());
-      setStatus({ kind: "success" });
-    } catch {
-      setStatus({ kind: "error", messageKey: "errorGeneric" });
-    }
+    // Opens the user's email app with the inquiry prefilled (works on static GitHub Pages).
+    window.location.href = buildContactMailto(clientResult.data);
+    setValues(emptyContactForm());
+    setStatus({ kind: "success" });
   }
 
   const submitting = status.kind === "submitting";
