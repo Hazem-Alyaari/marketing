@@ -99,7 +99,7 @@ export const siteConfig = {
     linkedin: "", // TODO
     instagram: "", // TODO
     youtube: "", // TODO
-    github: "https://github.com/Hazem-Alyaari/MySchool",
+    github: "", // TODO
   },
 
   seo: {

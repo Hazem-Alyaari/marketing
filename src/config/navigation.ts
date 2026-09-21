@@ -1,4 +1,3 @@
-import { siteConfig } from "@/config/site";
 import type { NavCta, NavGroup, NavItem } from "@/types/navigation";
 
 /**
@@ -91,15 +90,6 @@ export const mainNavigation = [
   navItems.contact,
 ] as const satisfies readonly NavItem[];
 
-const githubItem = siteConfig.social.github
-  ? ({
-      id: "github",
-      href: siteConfig.social.github,
-      labelKey: "github",
-      external: true,
-    } as const satisfies NavItem)
-  : null;
-
 export const footerNavigation = {
   product: {
     id: "product",
@@ -114,11 +104,7 @@ export const footerNavigation = {
   resources: {
     id: "resources",
     labelKey: "footer.resources",
-    items: [
-      navItems.blog,
-      navItems.faq,
-      ...(githubItem ? ([githubItem] as const) : ([] as const)),
-    ],
+    items: [navItems.blog, navItems.faq],
   },
 } as const satisfies Record<string, NavGroup>;
 
