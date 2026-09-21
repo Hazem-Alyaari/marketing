@@ -3,7 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "sync-app-downloads": "node scripts/sync-app-downloads.mjs",
+    "predev": "npm run sync-app-downloads",
     "dev": "next dev",
+    "prebuild": "npm run sync-app-downloads",
     "build": "next build",
     "start": "next start",
     "lint": "eslint"

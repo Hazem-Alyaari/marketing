@@ -5,6 +5,7 @@ import {
   DemoExplainerSection,
   FinalCtaSection,
   HeroSection,
+  MobileSection,
   ModulesSection,
   UsersSection,
   ValueSection,
@@ -40,6 +41,7 @@ export default async function HomePage({ params }: PageProps) {
       <ConnectedWorkflowSection />
       <UsersSection />
       <DemoExplainerSection />
+      <MobileSection />
       <FinalCtaSection />
     </main>
   );

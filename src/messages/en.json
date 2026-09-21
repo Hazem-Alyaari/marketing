@@ -169,6 +169,21 @@
     "cta": "Try MySchool Free",
     "hint": "Explore the public demo directly."
   },
+  "DownloadApp": {
+    "eyebrow": "App",
+    "title": "Download the MySchool app",
+    "description": "Install the app on your device for easier access on Android or Mac.",
+    "platforms": {
+      "android": {
+        "cta": "Download for Android",
+        "hint": "APK file — install directly on the device"
+      },
+      "mac": {
+        "cta": "Download for Mac",
+        "hint": "Desktop app for macOS"
+      }
+    }
+  },
   "DemoPage": {
     "meta": {
       "title": "Try MySchool",
