@@ -12,7 +12,8 @@ export type AppDownload = {
   fileName: string;
 };
 
-const APP_ROOT = join(process.cwd(), "app");
+/** Source packages live in `/downloads` (never `/app` — reserved by Next.js). */
+const DOWNLOADS_ROOT = join(process.cwd(), "downloads");
 
 const PLATFORM_DIRS: Record<
   AppPlatformId,
@@ -34,7 +35,7 @@ function findPackageFile(
   dirName: string,
   extensions: readonly string[],
 ): string | null {
-  const dir = join(APP_ROOT, dirName);
+  const dir = join(DOWNLOADS_ROOT, dirName);
   if (!existsSync(dir)) {
     return null;
   }
@@ -47,7 +48,7 @@ function findPackageFile(
 }
 
 /**
- * Discovers downloadable packages under `/app/<platform>/`.
+ * Discovers downloadable packages under `/downloads/<platform>/`.
  * Empty / missing folders are omitted — the UI only shows ready platforms.
  */
 export function getAvailableAppDownloads(): AppDownload[] {
@@ -62,7 +63,7 @@ export function getAvailableAppDownloads(): AppDownload[] {
 
     downloads.push({
       id,
-      href: withBasePath(`/app/${platform.dir}/${file}`),
+      href: withBasePath(`/downloads/${platform.dir}/${file}`),
       fileName: platform.fileName,
     });
   }
