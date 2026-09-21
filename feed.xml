@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>MySchool Blog</title>
+    <link>https://Hazem-Alyaari.github.io/marketing/ar/blog</link>
+    <description>MySchool is a multi-tenant school management platform that unifies admissions, academics, finance, HR, academic supervision, and family communication.</description>
+    <language>ar</language>
+    <atom:link href="https://Hazem-Alyaari.github.io/marketing/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ما دور الإشراف التربوي الرقمي في تطوير متابعة المعلمين؟</title>
+      <link>https://Hazem-Alyaari.github.io/marketing/ar/blog/al-ishraf-altarbawi-alraqmi</link>
+      <guid isPermaLink="true">https://Hazem-Alyaari.github.io/marketing/ar/blog/al-ishraf-altarbawi-alraqmi</guid>
+      <pubDate>Fri, 20 Mar 2026 00:00:00 GMT</pubDate>
+      <description>كيف يساعد الإشراف التربوي الرقمي على تنظيم الزيارات الصفية والتقييمات ومتابعة المعلمين بشكل أوضح وأكثر استمرارية.</description>
+      <content:encoded><![CDATA[الإشراف التربوي الجيد لا يقتصر على زيارة صفية متفرقة. هو مسار مستمر لفهم جودة الممارسات التعليمية ودعم المعلم بالتغذية الراجعة والمتابعة. الرقمنة هنا تعني تنظيم هذا المسار: توثيق أوضح، متابعة أسهل، وصورة مشتركة بين المشرف والإدارة دون تحويل الإشراف إلى عبء بيروقراطي. لماذا يحتاج …]]></content:encoded>
+    </item>
+    <item>
+      <title>Digital Educational Supervision and Teacher Follow-up</title>
+      <link>https://Hazem-Alyaari.github.io/marketing/en/blog/digital-educational-supervision-teacher-follow-up</link>
+      <guid isPermaLink="true">https://Hazem-Alyaari.github.io/marketing/en/blog/digital-educational-supervision-teacher-follow-up</guid>
+      <pubDate>Fri, 20 Mar 2026 00:00:00 GMT</pubDate>
+      <description>How digital educational supervision helps schools organize classroom visits, evaluations, and ongoing teacher follow-up without turning support into paperwork.</description>
+      <content:encoded><![CDATA[Good educational supervision is continuous support, not a one-off classroom visit. Digitization helps when it makes documentation clearer and follow-up easier — without turning supervision into bureaucracy. Why supervision needs structure Visit notes scattered across paper and ch…]]></content:encoded>
+    </item>
+    <item>
+      <title>إدارة الموارد البشرية في المدارس: الموظفون والحضور والإجازات والرواتب</title>
+      <link>https://Hazem-Alyaari.github.io/marketing/ar/blog/al-mawarid-albashariyya-fi-almadaris</link>
+      <guid isPermaLink="true">https://Hazem-Alyaari.github.io/marketing/ar/blog/al-mawarid-albashariyya-fi-almadaris</guid>
+      <pubDate>Wed, 18 Mar 2026 00:00:00 GMT</pubDate>
+      <description>كيف تنظّم المدارس شؤون الموظفين والحضور والإجازات وما يتصل بالرواتب عبر أنظمة موارد بشرية مناسبة للسياق المدرسي.</description>
+      <content:encoded><![CDATA[المدرسة مؤسسة تعليمية، لكنها أيضًا بيئة عمل لعدد كبير من الموظفين: معلمون، إداريون، مشرفون، وفرق دعم. إدارة الموارد البشرية هنا لا تقل أهمية عن إدارة الطلاب، لأن انتظام التشغيل يعتمد على وضوح شؤون الموظفين. لماذا تختلف موارد المدارس البشرية؟ السياق المدرسي يجمع جداول دراسية، فترا…]]></content:encoded>
+    </item>
+    <item>
+      <title>School HR: Employees, Attendance, Leave, and Payroll Links</title>
+      <link>https://Hazem-Alyaari.github.io/marketing/en/blog/school-hr-employees-attendance-leave-payroll</link>
+      <guid isPermaLink="true">https://Hazem-Alyaari.github.io/marketing/en/blog/school-hr-employees-attendance-leave-payroll</guid>
+      <pubDate>Wed, 18 Mar 2026 00:00:00 GMT</pubDate>
+      <description>How schools organize employee records, staff attendance, leave, and payroll-related workflows inside school-aware HR processes.</description>
+      <content:encoded><![CDATA[A school is an educational community — and a workplace. Teachers, administrators, supervisors, and support staff all depend on clear HR processes for records, attendance, leave, and payroll-related data. Why school HR is different School calendars, timetable coverage, assessment …]]></content:encoded>
+    </item>
+    <item>
+      <title>كيف تساعد الأنظمة المدرسية في تنظيم الرسوم والحسابات؟</title>
+      <link>https://Hazem-Alyaari.github.io/marketing/ar/blog/tanzim-alrusum-wa-alhisabat-almadrasiyya</link>
+      <guid isPermaLink="true">https://Hazem-Alyaari.github.io/marketing/ar/blog/tanzim-alrusum-wa-alhisabat-almadrasiyya</guid>
+      <pubDate>Mon, 16 Mar 2026 00:00:00 GMT</pubDate>
+      <description>شرح عملي لدور الأنظمة المدرسية في تنظيم رسوم الطلاب وحساباتهم والمتابعة المالية اليومية دون تعقيد غير ضروري.</description>
+      <content:encoded><![CDATA[الجانب المالي في المدرسة حسّاس لأنه يمس ثقة الأسر واستقرار التشغيل معًا. تنظيم الرسوم والحسابات لا يعني تحويل المدرسة إلى شركة محاسبية معقّدة، بل جعل الالتزامات والمدفوعات والمتابعات واضحة وقابلة للتتبع. لماذا يهم الربط بين الرسوم وملف الطالب؟ عندما تكون الرسوم منفصلة عن سجل الطا…]]></content:encoded>
+    </item>
+    <item>
+      <title>How School Systems Help Organize Fees and Accounting</title>
+      <link>https://Hazem-Alyaari.github.io/marketing/en/blog/school-fees-and-accounting-systems</link>
+      <guid isPermaLink="true">https://Hazem-Alyaari.github.io/marketing/en/blog/school-fees-and-accounting-systems</guid>
+      <pubDate>Mon, 16 Mar 2026 00:00:00 GMT</pubDate>
+      <description>A practical look at school fees, student accounts, collections, and accounting workflows inside a connected school management system.</description>
+      <content:encoded><![CDATA[School finance is sensitive because it affects family trust and operational stability. Organizing fees and accounts is less about complex corporate accounting theater and more about clear obligations, payments, and follow-up. Why fees should link to the student record Faster answ…]]></content:encoded>
+    </item>
+    <item>
+      <title>إدارة حضور وغياب الطلاب: من السجل الورقي إلى النظام الرقمي</title>
+      <link>https://Hazem-Alyaari.github.io/marketing/ar/blog/idarat-hudur-wa-ghiyab-al-tullab</link>
+      <guid isPermaLink="true">https://Hazem-Alyaari.github.io/marketing/ar/blog/idarat-hudur-wa-ghiyab-al-tullab</guid>
+      <pubDate>Sat, 14 Mar 2026 00:00:00 GMT</pubDate>
+      <description>كيف تنتقل المدرسة من سجلات الحضور الورقية إلى نظام رقمي أوضح للمتابعة اليومية والتواصل مع الأسر واتخاذ القرار.</description>
+      <content:encoded><![CDATA[الحضور ليس مجرد علامة يومية في دفتر. هو مؤشر مبكر على انتظام الطالب، وجودة المتابعة الصفية، وقدرة المدرسة على التواصل السريع مع ولي الأمر عند الغياب المتكرر. هذا المقال يشرح الانتقال من السجل الورقي إلى المتابعة الرقمية، وما الذي يجب أن يتحقق تشغيليًا حتى يكون النظام مفيدًا فعلًا…]]></content:encoded>
+    </item>
+    <item>
+      <title>Student Attendance: From Paper Registers to Digital Follow-up</title>
+      <link>https://Hazem-Alyaari.github.io/marketing/en/blog/student-attendance-from-paper-to-digital</link>
+      <guid isPermaLink="true">https://Hazem-Alyaari.github.io/marketing/en/blog/student-attendance-from-paper-to-digital</guid>
+      <pubDate>Sat, 14 Mar 2026 00:00:00 GMT</pubDate>
+      <description>How schools move from paper attendance registers to digital workflows that support daily recording, leadership visibility, and family communication.</description>
+      <content:encoded><![CDATA[Attendance is more than a daily mark. It is an early signal of student engagement, classroom follow-up quality, and how quickly a school can involve families when absences repeat. Limits of paper registers Slow weekly or monthly rollups Late manual review of absence patterns Weak…]]></content:encoded>
+    </item>
+    <item>
+      <title>كيف تختار برنامج إدارة مدارس مناسب لمدرستك؟</title>
+      <link>https://Hazem-Alyaari.github.io/marketing/ar/blog/kayfa-takhtar-barnamaj-idarat-madaris</link>
+      <guid isPermaLink="true">https://Hazem-Alyaari.github.io/marketing/ar/blog/kayfa-takhtar-barnamaj-idarat-madaris</guid>
+      <pubDate>Thu, 12 Mar 2026 00:00:00 GMT</pubDate>
+      <description>معايير عملية لاختيار برنامج إدارة مدارس: العمليات، الأدوار، الصلاحيات، البوابات، التبني، وما يجب تجنّبه أثناء التقييم.</description>
+      <content:encoded><![CDATA[اختيار برنامج إدارة مدارس ليس قرار تقنية فقط. هو قرار تشغيلي يؤثر على الإدارة والمعلمين والمالية والأسر. لذلك من الأفضل أن يبدأ التقييم من عمليات المدرسة، لا من العرض التسويقي. هذا المقال يقدّم إطارًا عمليًا للمقارنة دون ادعاء أن هناك برنامجًا واحدًا يناسب كل مدرسة. ابدأ من نقاط …]]></content:encoded>
+    </item>
+    <item>
+      <title>How to Choose School Management Software for Your School</title>
+      <link>https://Hazem-Alyaari.github.io/marketing/en/blog/how-to-choose-school-management-software</link>
+      <guid isPermaLink="true">https://Hazem-Alyaari.github.io/marketing/en/blog/how-to-choose-school-management-software</guid>
+      <pubDate>Thu, 12 Mar 2026 00:00:00 GMT</pubDate>
+      <description>A practical checklist for choosing school management software: operations, roles, permissions, portals, adoption, and evaluation red flags.</description>
+      <content:encoded><![CDATA[Choosing school management software is an operations decision. It affects leadership, teachers, finance, HR, and families. Start from school pain points, not from a polished feature grid. Start with operational pain Student registration and handoffs between teams Daily attendance…]]></content:encoded>
+    </item>
+    <item>
+      <title>ما هو نظام إدارة المدارس؟ دليل شامل للإدارة المدرسية الحديثة</title>
+      <link>https://Hazem-Alyaari.github.io/marketing/ar/blog/ma-huwa-nizam-idarat-almadaris</link>
+      <guid isPermaLink="true">https://Hazem-Alyaari.github.io/marketing/ar/blog/ma-huwa-nizam-idarat-almadaris</guid>
+      <pubDate>Tue, 10 Mar 2026 00:00:00 GMT</pubDate>
+      <description>تعرّف على مفهوم نظام إدارة المدارس، وما الذي يغطيه عادةً، وكيف يساعد الإدارة والمعلمين والأسر على العمل بوضوح أكبر.</description>
+      <content:encoded><![CDATA[عندما تبحث مدرسة عن «نظام إدارة المدارس»، فهي في الغالب لا تبحث عن برنامج واحد ضيق، بل عن طريقة أوضح لتنظيم العمل اليومي: الطلاب، الجداول، الحضور، الرسوم، الموارد البشرية، والتواصل مع الأسر. هذا الدليل يشرح المفهوم بشكل عملي، وما الذي يغطيه النظام عادةً، وكيف تفرّق بين الأدوات ال…]]></content:encoded>
+    </item>
+    <item>
+      <title>What Is a School Management System? A Practical Guide</title>
+      <link>https://Hazem-Alyaari.github.io/marketing/en/blog/what-is-a-school-management-system</link>
+      <guid isPermaLink="true">https://Hazem-Alyaari.github.io/marketing/en/blog/what-is-a-school-management-system</guid>
+      <pubDate>Tue, 10 Mar 2026 00:00:00 GMT</pubDate>
+      <description>Learn what a school management system covers, how it differs from disconnected tools, and how schools can evaluate one with clear operational questions.</description>
+      <content:encoded><![CDATA[When schools search for a school management system, they are usually looking for clarity: one place to organize students, schedules, attendance, fees, staff processes, and family communication. This guide explains the concept in practical terms — what these platforms typically co…]]></content:encoded>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,5 @@
+User-Agent: *
+Allow: /
+
+Host: https://Hazem-Alyaari.github.io/marketing
+Sitemap: https://Hazem-Alyaari.github.io/marketing/sitemap.xml
