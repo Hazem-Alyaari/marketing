@@ -3,6 +3,7 @@ import { hasLocale } from "next-intl";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
+import { AndroidDownloadPrompt } from "@/components/download/android-download-prompt";
 import { Footer } from "@/components/layout/footer";
 import { Header } from "@/components/layout/header";
 import { routing } from "@/i18n/routing";
@@ -61,6 +62,7 @@ export default async function LocaleLayout({
           <Header />
           <div className="flex-1">{children}</div>
           <Footer />
+          <AndroidDownloadPrompt />
         </NextIntlClientProvider>
       </body>
     </html>

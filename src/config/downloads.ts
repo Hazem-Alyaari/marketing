@@ -73,3 +73,8 @@ export function getAvailableAppDownloads(): AppDownload[] {
 export function hasAppDownloads(): boolean {
   return getAvailableAppDownloads().length > 0;
 }
+
+/** Android APK entry when present — used by the phone-only install prompt. */
+export function getAndroidAppDownload(): AppDownload | null {
+  return getAvailableAppDownloads().find((item) => item.id === "android") ?? null;
+}

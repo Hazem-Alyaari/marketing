@@ -182,6 +182,12 @@
         "cta": "Download for Mac",
         "hint": "Desktop app for macOS"
       }
+    },
+    "phonePrompt": {
+      "ariaLabel": "Download the MySchool app",
+      "cta": "Download & install the app",
+      "hint": "After download, open the file and tap Install. Your phone may ask to allow installs from the browser.",
+      "dismiss": "Dismiss"
     }
   },
   "DemoPage": {
