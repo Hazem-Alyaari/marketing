@@ -18,16 +18,18 @@ type BlogIndexContentProps = {
   availableCategories: readonly BlogCategoryId[];
 };
 
-function BlogIndexInner({
+type BlogIndexViewProps = BlogIndexContentProps & {
+  category?: BlogCategoryId;
+};
+
+function BlogIndexView({
   locale,
   articles,
   featured,
   availableCategories,
-}: BlogIndexContentProps) {
+  category,
+}: BlogIndexViewProps) {
   const t = useTranslations("Blog");
-  const searchParams = useSearchParams();
-  const category = parseBlogCategoryParam(searchParams.get("category") ?? undefined);
-
   const activeFeatured = category ? null : featured;
 
   const list = useMemo(() => {
@@ -103,9 +105,18 @@ function BlogIndexInner({
   );
 }
 
+function BlogIndexInner(props: BlogIndexContentProps) {
+  const searchParams = useSearchParams();
+  const category = parseBlogCategoryParam(
+    searchParams.get("category") ?? undefined,
+  );
+
+  return <BlogIndexView {...props} category={category} />;
+}
+
 export function BlogIndexContent(props: BlogIndexContentProps) {
   return (
-    <Suspense fallback={null}>
+    <Suspense fallback={<BlogIndexView {...props} />}>
       <BlogIndexInner {...props} />
     </Suspense>
   );

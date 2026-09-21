@@ -1,5 +1,7 @@
+"use client";
+
 import Image from "next/image";
-import { getTranslations } from "next-intl/server";
+import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { articlePath, formatArticleDate } from "@/lib/blog";
 import { blogHref } from "@/lib/blog-href";
@@ -18,12 +20,12 @@ type ArticleCardProps = {
   featured?: boolean;
 };
 
-export async function ArticleCard({
+export function ArticleCard({
   article,
   locale,
   featured = false,
 }: ArticleCardProps) {
-  const t = await getTranslations("Blog");
+  const t = useTranslations("Blog");
   const category = getBlogCategory(article.category);
   const href = articlePath(article.slug);
 
