@@ -11,12 +11,13 @@ import { BreadcrumbJsonLd } from "@/components/seo/breadcrumb-json-ld";
 import { ArticleJsonLd } from "@/components/seo/article-json-ld";
 import { Container } from "@/components/ui/container";
 import { Reveal } from "@/components/ui/reveal";
-import { Link, redirect } from "@/i18n/navigation";
+import { Link } from "@/i18n/navigation";
 import { getBlogCategory } from "@/data/blog/categories";
 import { buildLocalePath } from "@/config/seo";
 import { routes } from "@/config/navigation";
 import { buttonClassName } from "@/components/ui/button";
 import { DemoLink } from "@/components/ui/demo-link";
+import { BlogSlugRedirect } from "@/components/blog/blog-slug-redirect";
 import {
   articlePath,
   extractToc,
@@ -113,7 +114,7 @@ export default async function BlogPostPage({ params }: PageProps) {
   const { article, redirectTo } = resolveBlogArticle(typedLocale, slug);
 
   if (redirectTo) {
-    redirect({ href: redirectTo, locale: typedLocale });
+    return <BlogSlugRedirect locale={typedLocale} href={redirectTo} />;
   }
   if (!article) {
     notFound();
