@@ -13,6 +13,7 @@ export async function Footer() {
 
   const contactEmail = siteConfig.contact.email;
   const contactPhone = siteConfig.contact.phone;
+  const contactWhatsapp = siteConfig.contact.whatsapp;
 
   return (
     <footer className="mt-auto border-t border-border bg-muted/50">
@@ -33,10 +34,21 @@ export async function Footer() {
             ) : null}
             {contactPhone ? (
               <a
-                href={`tel:${contactPhone}`}
+                href={`tel:${contactPhone.replace(/\s+/g, "")}`}
                 className="block text-sm text-muted-foreground transition-colors hover:text-foreground"
+                dir="ltr"
               >
                 {contactPhone}
+              </a>
+            ) : null}
+            {contactWhatsapp ? (
+              <a
+                href={contactWhatsapp}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block text-sm text-muted-foreground transition-colors hover:text-foreground"
+              >
+                {tFooter("whatsapp")}
               </a>
             ) : null}
             <LocaleSwitcher compact />

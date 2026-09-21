@@ -71,9 +71,12 @@ export const siteConfig = {
   localeDirections,
 
   contact: {
-    email: readPublicEnv("NEXT_PUBLIC_CONTACT_EMAIL"),
-    phone: readPublicEnv("NEXT_PUBLIC_CONTACT_PHONE"),
-    whatsapp: normalizePublicUrl("NEXT_PUBLIC_WHATSAPP_URL"),
+    email: readPublicEnv("NEXT_PUBLIC_CONTACT_EMAIL") || "alyaarihazem@gmail.com",
+    phone: readPublicEnv("NEXT_PUBLIC_CONTACT_PHONE") || "+967 776 137 120",
+    /** Opens WhatsApp chat — digits only in wa.me path. */
+    whatsapp:
+      normalizePublicUrl("NEXT_PUBLIC_WHATSAPP_URL") ||
+      "https://wa.me/967776137120",
   },
 
   company: {

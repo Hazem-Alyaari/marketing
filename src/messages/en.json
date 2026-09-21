@@ -175,7 +175,8 @@
   "Footer": {
     "description": "A school management platform that brings academic, administrative, and financial operations into one experience.",
     "rights": "All rights reserved.",
-    "navLabel": "Footer"
+    "navLabel": "Footer",
+    "whatsapp": "Chat on WhatsApp"
   },
   "Pages": {
     "home": "Home",
@@ -735,6 +736,9 @@
       "title": "Want to try the system?",
       "description": "Explore the public demo directly — no contact form required. The demo is separate from first-year production use.",
       "cta": "Try MySchool Free"
+    },
+    "channels": {
+      "whatsapp": "Chat on WhatsApp"
     },
     "form": {
       "eyebrow": "Direct message",

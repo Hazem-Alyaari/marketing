@@ -1,5 +1,5 @@
 import { getTranslations } from "next-intl/server";
-import { Mail, Phone } from "lucide-react";
+import { Mail, MessageCircle, Phone } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { DemoLink, hasDemoUrl } from "@/components/ui/demo-link";
 import { Reveal } from "@/components/ui/reveal";
@@ -11,6 +11,7 @@ export async function ContactPageContent() {
   const showDemo = hasDemoUrl();
   const contactEmail = siteConfig.contact.email.trim();
   const contactPhone = siteConfig.contact.phone.trim();
+  const contactWhatsapp = siteConfig.contact.whatsapp.trim();
 
   return (
     <>
@@ -70,7 +71,7 @@ export async function ContactPageContent() {
       <section aria-labelledby="contact-form-heading" className="section-pad">
         <Container narrow>
           <Reveal>
-            {(contactEmail || contactPhone) && (
+            {(contactEmail || contactPhone || contactWhatsapp) && (
               <ul className="mb-8 flex flex-wrap items-center justify-center gap-3">
                 {contactEmail ? (
                   <li>
@@ -92,6 +93,20 @@ export async function ContactPageContent() {
                     >
                       <Phone className="size-4 text-primary" aria-hidden />
                       <span>{contactPhone}</span>
+                    </a>
+                  </li>
+                ) : null}
+                {contactWhatsapp ? (
+                  <li>
+                    <a
+                      href={contactWhatsapp}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 rounded-[var(--radius-lg)] border border-[#25D366]/40 bg-[color-mix(in_srgb,#25D366_10%,var(--background))] px-4 py-2.5 text-sm font-medium text-foreground shadow-[var(--shadow-sm)] transition-colors hover:border-[#25D366]/70 hover:bg-[color-mix(in_srgb,#25D366_16%,var(--background))]"
+                      dir="ltr"
+                    >
+                      <MessageCircle className="size-4 text-[#25D366]" aria-hidden />
+                      <span>{t("channels.whatsapp")}</span>
                     </a>
                   </li>
                 ) : null}
