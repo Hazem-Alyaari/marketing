@@ -40,11 +40,26 @@ function findPackageFile(
     return null;
   }
 
-  const match = readdirSync(dir).find((name) =>
+  const matches = readdirSync(dir).filter((name) =>
     extensions.some((ext) => name.toLowerCase().endsWith(ext)),
   );
 
-  return match ?? null;
+  if (matches.length === 0) {
+    return null;
+  }
+
+  // Prefer production builds (myschool.*) over debug/dev APKs when both exist.
+  const ranked = [...matches].sort((a, b) => {
+    const score = (name: string) => {
+      const lower = name.toLowerCase();
+      if (lower.startsWith("myschool.")) return 0;
+      if (lower.includes("debug")) return 2;
+      return 1;
+    };
+    return score(a) - score(b) || a.localeCompare(b);
+  });
+
+  return ranked[0] ?? null;
 }
 
 /**
